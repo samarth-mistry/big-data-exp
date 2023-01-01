@@ -14,6 +14,8 @@ app.config['JSON_SORT_KEYS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{cfg['user']}:{cfg['password']}@{cfg['host']}:{cfg['port']}/{cfg['database']}"
 db = SQLAlchemy(app)
 
+print(f"postgresql://{cfg['user']}:{cfg['password']}@{cfg['host']}:{cfg['port']}/{cfg['database']}")
+
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
