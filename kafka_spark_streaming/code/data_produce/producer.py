@@ -80,4 +80,4 @@ if __name__ == "__main__":
         )
         p.flush()
 
-        time.sleep(second)
+        time.sleep(0.09)

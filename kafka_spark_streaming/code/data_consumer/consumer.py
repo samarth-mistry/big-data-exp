@@ -61,19 +61,18 @@ if __name__ == "__main__":
 
     # # Transfrom
     # print(data) #DataFrame[value: struct<event:string,messageid:string,userid:string,properties:struct<productid:string>,context:struct<source:string>,timestamp:string>]
-    print("!!#"*50)
-    # data.show()
+    # print("!!#"*50)
+    # data.show(5,truncate=False)
     # print("#()"*50)
 
     cleaning_data = transforms[topic](data)
 
-    # cleaning_data.printSchema()
+    cleaning_data.printSchema()
 
-    # # Load
-    # writeStream = cleaning_data.writeStream \
-    #     .outputMode("append") \
-    #     .foreachBatch(lambda df, epoch_id: foreach_batch_function(df, epoch_id, table)) \
-    #     .option("truncate", "false")\
-    #     .start()
+    writeStream = cleaning_data.writeStream \
+        .outputMode("append") \
+        .foreachBatch(lambda df, epoch_id: foreach_batch_function(df, epoch_id, table)) \
+        .option("truncate", "false")\
+        .start()
 
-    # writeStream.awaitTermination()
+    writeStream.awaitTermination()
