@@ -1,0 +1,2 @@
+######## SETUP
+pip3 install -r /workspaces/big-data-exp/kafka_spark_streaming/code/data_produce/requirements.txt
